@@ -15,8 +15,8 @@
 package cmd
 
 import (
-	"Agenda/123/cli/entity"
-	"Agenda/123/cli/operation"
+	"GoAgenda/http-api/cli/entity"
+	"GoAgenda/http-api/cli/operation"
 	"github.com/spf13/cobra"
 	"os"
 )
