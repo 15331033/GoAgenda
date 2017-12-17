@@ -2,7 +2,7 @@ package test
 
 import (
 	"testing"
-	"Agenda/123/cli/entity"
+	"GoAgenda/http-api/cli/entity"
 )
 
 func TestIsParticipator(t *testing.T) {
