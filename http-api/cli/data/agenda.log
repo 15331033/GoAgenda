@@ -1,0 +1,7 @@
+Error:2017/10/31 22:23:43 register.go:76: Register Fail! Lack of name password email phone.
+Info:2017/10/31 22:23:50 register.go:47: Register Success!
+Info:2017/10/31 22:23:50 register.go:48: Your information is
+username: caijh
+password: 123456
+email: caijh23@gmail.com
+telephone: 123456789
