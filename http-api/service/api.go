@@ -10,7 +10,7 @@ import (
 	"net/http"
 	"github.com/unrolled/render"
 	"strings"
-	"github.com/caijh23/GoAgenda/cloudgo-storage/entities"
+	"github.com/caijh23/GoAgenda/http-api/entities"
 )
 
 func getKeyHandler(formatter *render.Render) http.HandlerFunc {
@@ -23,7 +23,7 @@ func getKeyHandler(formatter *render.Render) http.HandlerFunc {
 				var list = []string{"user","admin"}
 				formatter.JSON(w, http.StatusOK, struct{ Key string `json:"key"`; Permissions []string `json:"permissions"` }{"1e3576bt",list})
 			} else {
-				http.Error(w, "404 not found", 404)
+				formatter.JSON(w, 404, struct{ Key string `json:"key"`; Permissions []string `json:"permissions"` }{"",nil})
 			}
     }
 }
@@ -36,6 +36,7 @@ func listAllUserHandler(formatter *render.Render) http.HandlerFunc {
 func createUserHandler(formatter *render.Render) http.HandlerFunc {
 	return func(w http.ResponseWriter, req *http.Request) {
 		req.ParseForm()
+		fmt.Println(req.Form)
 		if len(req.Form["UserName"][0]) == 0  {
 				formatter.JSON(w, http.StatusBadRequest, struct{ ErrorIndo string }{"Bad Input!"})
 				return

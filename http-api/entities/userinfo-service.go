@@ -30,7 +30,7 @@ func (*UserInfoAtomicService) UpdateUser(u *UserInfo) *UserInfo  {
 	err := session.Begin()
 	checkErr(err)
 
-	_, err = session.Where("UID = ?", u.UID).Update(u)
+	_, err = session.Where("id = ?", u.UID).Update(u)
 	checkErr(err)
 	if err == nil {
 		session.Commit()
@@ -61,6 +61,9 @@ func (*UserInfoAtomicService) FindAllUser() []UserInfo {
 	var users []UserInfo
 	err := myEngine.Find(&users)
 	checkErr(err)
+	if err != nil {
+		return nil
+	}
 	return users
 }
 
@@ -69,5 +72,8 @@ func (*UserInfoAtomicService) FindByID(id int) *UserInfo {
 	var user UserInfo
 	_, err := myEngine.Id(id).Get(&user)
 	checkErr(err)
+	if err != nil {
+		return nil
+	}
 	return &user
 }

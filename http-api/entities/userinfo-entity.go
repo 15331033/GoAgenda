@@ -7,7 +7,7 @@ import (
 
 // UserInfo .
 type UserInfo struct {
-    UID        int   `orm:"id,auto-inc"` //语义标签
+    UID        int  `xorm:"pk autoincr 'id'"`//语义标签
     UserName   string
     Password   string
     Email      string
