@@ -24,7 +24,7 @@ import (
 var deleteCmd = &cobra.Command{
 	Use:   "delete",
 	Short: "To delete one account",
-	Long:  `To delete one account,the following parameters should be avaliable,id/UID is the id you want to delete`,
+	Long:  `To delete one account,the following parameters should be avaliable,i/UID is the id you want to delete`,
 	Run: func(cmd *cobra.Command, args []string) {
 		//s := entity.GetStorage()
 		//userList := s.QueryUser(getAll)
@@ -40,7 +40,7 @@ var deleteCmd = &cobra.Command{
 
 func init() {
 	RootCmd.AddCommand(deleteCmd)
-	deleteCmd.Flags().StringP("UID", "id", "", "the id,,it should be empty")
+	deleteCmd.Flags().StringP("UID", "i", "", "the id,it should not be empty")
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command

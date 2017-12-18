@@ -1,8 +1,6 @@
 package operation
 
 import (
-	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 )
@@ -12,19 +10,19 @@ func DeleteUser(id string) {
 	check(err)
 	defer res.Body.Close()
 
-	body, err := ioutil.ReadAll(res.Body)
+	_, err = ioutil.ReadAll(res.Body)
 	check(err)
 
-	var retJSON User
+	//var retJSON User
 
 	//w, err := json.Marshal(retJSON)
 	//check(err)
 
-	if err := json.Unmarshal(body, &retJSON); err != nil {
-		panic(err)
-	}
+	//if err := json.Unmarshal(body, &retJSON); err != nil {
+	//	panic(err)
+	//}
 
-	fmt.Println(retJSON)
+	//fmt.Println(retJSON)
 }
 func deleteRequest(url string) (*http.Response, error) {
 	client := &http.Client{}

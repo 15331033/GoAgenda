@@ -4,12 +4,13 @@ import (
 	"GoAgenda/http-api/cli/operation"
 	"GoAgenda/http-api/cli/entity"
 	"github.com/spf13/cobra"
+	"strconv"
 )
 
 var upDateCmd = &cobra.Command{
 	Use:   "update",
 	Short: "To update the information",
-	Long:  `To update the information, the following parameters should be avaliable, id/UID is your user id, u/username is your new username, p/password is your new password, e/email is your new email`,
+	Long:  `To update the information, the following parameters should be avaliable, i/UID is your user id, u/username is your new username, p/password is your new password, e/email is your new email`,
 	Run: func(cmd *cobra.Command, args []string) {
 		//s := entity.GetStorage()
 		//userList := s.QueryUser(getAll)
@@ -24,13 +25,13 @@ var upDateCmd = &cobra.Command{
 
 		updateUser := operation.UpdateUser(id,username,password,email)
 		entity.Info.Println("Update Success!")
-		entity.Info.Println("Update information is\nuid: " + string(updateUser.UID) + "\nusername: " + updateUser.UserName + "\npassword: " + updateUser.Password + "\nemail: " + updateUser.Email + "\ncreatedTime: " + updateUser.Created.Format("2006-01-02 15:04:05"))
+		entity.Info.Println("Update information is\nuid: " + strconv.Itoa(updateUser.UID) + "\nusername: " + updateUser.UserName + "\npassword: " + updateUser.Password + "\nemail: " + updateUser.Email + "\ncreatedTime: " + updateUser.Created.Format("2006-01-02 15:04:05"))
 	},
 }
 
 func init() {
 	RootCmd.AddCommand(upDateCmd)
-	upDateCmd.Flags().StringP("UID", "id", "", "the id,it should not be empty")
+	upDateCmd.Flags().StringP("UID", "i", "", "the id,it should not be empty")
 	upDateCmd.Flags().StringP("username", "u", "", "the username,it should not be empty")
 	upDateCmd.Flags().StringP("password", "p", "", "the password,it should not be empty")
 	upDateCmd.Flags().StringP("email", "e", "", "the email,it should not be empty")

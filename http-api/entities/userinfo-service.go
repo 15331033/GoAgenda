@@ -47,7 +47,7 @@ func (*UserInfoAtomicService) DeleteUser(id int) error {
 	err := session.Begin()
 	checkErr(err)
 
-	_, err = session.Exec("delete from UserInfo where UID = ?", id)
+	_, err = session.Exec("delete from UserInfo where id = ?", id)
 	if err != nil {
 		session.Rollback()
 		return err

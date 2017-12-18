@@ -18,6 +18,7 @@ import (
 	"GoAgenda/http-api/cli/operation"
 	"GoAgenda/http-api/cli/entity"
 	"github.com/spf13/cobra"
+	"strconv"
 )
 
 // registerCmd represents the register command
@@ -34,14 +35,14 @@ var queryCmd = &cobra.Command{
 
 		userList := operation.ListAllUser(key)
 		for _, v := range userList {
-			entity.Info.Println("uid: " + string(v.UID) + " username: " + v.UserName + " password: " + v.Password + " email: " + v.Email + " createdTime: " + v.Created.Format("2006-01-02 15:04:05"))
+			entity.Info.Println("uid: " + strconv.Itoa(v.UID) + " username: " + v.UserName + " password: " + v.Password + " email: " + v.Email + " createdTime: " + v.Created.Format("2006-01-02 15:04:05"))
 		}
 	},
 }
 
 func init() {
 	RootCmd.AddCommand(queryCmd)
-	queryCmd.Flags().StringP("key", "k", "", "the key,,it should be empty")
+	queryCmd.Flags().StringP("key", "k", "", "the key,it should not be empty")
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command

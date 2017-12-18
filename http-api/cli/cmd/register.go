@@ -18,6 +18,7 @@ import (
 	"GoAgenda/http-api/cli/entity"
 	"GoAgenda/http-api/cli/operation"
 	"github.com/spf13/cobra"
+	"strconv"
 	"os"
 )
 
@@ -45,7 +46,7 @@ var registerCmd = &cobra.Command{
 		//s.CreatUser(tempUser)
 
 		entity.Info.Println("Register Success!")
-		entity.Info.Println("Your information is\nuid: " + string(tempUser.UID) + "\nusername: " + tempUser.UserName + "\npassword: " + tempUser.Password + "\nemail: " + tempUser.Email + "\ncreatedTime: " + tempUser.Created.Format("2006-01-02 15:04:05"))
+		entity.Info.Println("Your information is\nuid: " + strconv.Itoa(tempUser.UID) + "\nusername: " + tempUser.UserName + "\npassword: " + tempUser.Password + "\nemail: " + tempUser.Email + "\ncreatedTime: " + tempUser.Created.Format("2006-01-02 15:04:05"))
 	},
 }
 
@@ -77,7 +78,7 @@ func ifNull(key, id, oldPassword, username, password, email string) {
 		i += 1
 	}
 	if i != 0 {
-		entity.Error.Println("Register Fail! Lack of" + err)
+		entity.Error.Println("Fail! Lack of" + err)
 		os.Exit(2)
 	}
 }
@@ -106,10 +107,10 @@ func outPutErr(errs []error) {
 
 func init() {
 	RootCmd.AddCommand(registerCmd)
-	registerCmd.Flags().StringP("key", "k", "", "the key,,it should be empty")
-	registerCmd.Flags().StringP("user", "u", "", "the user,,it should be empty")
+	registerCmd.Flags().StringP("key", "k", "", "the key,it should not be empty")
+	registerCmd.Flags().StringP("user", "u", "", "the user,it should not be empty")
 	registerCmd.Flags().StringP("password", "p", "", "the password,it should not be empty")
-	registerCmd.Flags().StringP("email", "e", "", "the email,,it should be empty")
+	registerCmd.Flags().StringP("email", "e", "", "the email,it should not be empty")
 	//registerCmd.Flags().StringP("phone", "t", "", "your phone,it should not be empyt")
 	// Here you will define your flags and configuration settings.
 }
