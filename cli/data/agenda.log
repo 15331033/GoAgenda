@@ -1,0 +1,72 @@
+Error:2017/10/31 22:23:43 register.go:76: Register Fail! Lack of name password email phone.
+Info:2017/10/31 22:23:50 register.go:47: Register Success!
+Info:2017/10/31 22:23:50 register.go:48: Your information is
+username: caijh
+password: 123456
+email: caijh23@gmail.com
+telephone: 123456789
+Info:2017/12/18 21:57:00 getKey.go:24: your key infomation is 
+Info:2017/12/18 21:57:00 getKey.go:25: {1e3576bt [user admin]}
+Info:2017/12/18 21:57:52 getKey.go:24: your key infomation is 
+Info:2017/12/18 21:57:52 getKey.go:25: {1e3576bt [user admin]}
+Info:2017/12/18 22:07:24 register.go:47: Register Success!
+Info:2017/12/18 22:07:24 register.go:48: Your information is
+uid: 
+username: chen
+password: 123
+email: 123@qq.com
+createdTime: 2017-12-18 22:07:24
+Info:2017/12/18 22:18:22 register.go:48: Register Success!
+Info:2017/12/18 22:18:22 register.go:49: Your information is
+uid: 4
+username: che
+password: 123
+email: 123@qq.com
+createdTime: 2017-12-18 22:18:22
+Info:2017/12/18 22:18:55 register.go:48: Register Success!
+Info:2017/12/18 22:18:55 register.go:49: Your information is
+uid: 5
+username: chenwenbin
+password: 123
+email: 123@qq.com
+createdTime: 2017-12-18 22:18:55
+Info:2017/12/18 22:20:21 query.go:37: uid:  username: test password: test email: test@123.com createdTime: 2017-12-17 22:44:17
+Info:2017/12/18 22:20:21 query.go:37: uid:  username: test1 password: test1 email: test1@123.com createdTime: 2017-12-17 22:44:35
+Info:2017/12/18 22:20:21 query.go:37: uid:  username: chen password: 123 email: 123@qq.com createdTime: 2017-12-18 22:07:24
+Info:2017/12/18 22:20:21 query.go:37: uid:  username: che password: 123 email: 123@qq.com createdTime: 2017-12-18 22:18:22
+Info:2017/12/18 22:20:21 query.go:37: uid:  username: chenwenbin password: 123 email: 123@qq.com createdTime: 2017-12-18 22:18:55
+Info:2017/12/18 22:21:56 query.go:38: uid: 1 username: test password: test email: test@123.com createdTime: 2017-12-17 22:44:17
+Info:2017/12/18 22:21:56 query.go:38: uid: 2 username: test1 password: test1 email: test1@123.com createdTime: 2017-12-17 22:44:35
+Info:2017/12/18 22:21:56 query.go:38: uid: 3 username: chen password: 123 email: 123@qq.com createdTime: 2017-12-18 22:07:24
+Info:2017/12/18 22:21:56 query.go:38: uid: 4 username: che password: 123 email: 123@qq.com createdTime: 2017-12-18 22:18:22
+Info:2017/12/18 22:21:56 query.go:38: uid: 5 username: chenwenbin password: 123 email: 123@qq.com createdTime: 2017-12-18 22:18:55
+Info:2017/12/18 22:23:30 update.go:27: Update Success!
+Info:2017/12/18 22:23:30 update.go:28: Update information is
+uid: 5
+username: hhhh
+password: shi
+email: jjjj@163.com
+createdTime: 2017-12-18 22:23:29
+Info:2017/12/18 22:29:29 delete.go:37: Delete Success!
+Info:2017/12/18 22:35:05 delete.go:37: Delete Success!
+Info:2017/12/18 22:36:09 delete.go:37: Delete Success!
+Info:2017/12/18 22:38:15 update.go:27: Update Success!
+Info:2017/12/18 22:38:15 update.go:28: Update information is
+uid: 5
+username: hhhh
+password: shi
+email: jj1j@163.com
+createdTime: 2017-12-18 22:38:15
+Info:2017/12/18 23:05:22 query.go:38: uid: 1 username: test password: test email: test@123.com createdTime: 2017-12-17 22:44:17
+Info:2017/12/18 23:05:22 query.go:38: uid: 2 username: test1 password: test1 email: test1@123.com createdTime: 2017-12-17 22:44:35
+Info:2017/12/18 23:05:22 query.go:38: uid: 3 username: chen password: 123 email: 123@qq.com createdTime: 2017-12-18 22:07:24
+Info:2017/12/18 23:05:22 query.go:38: uid: 4 username: che password: 123 email: 123@qq.com createdTime: 2017-12-18 22:18:22
+Info:2017/12/18 23:05:22 query.go:38: uid: 5 username: hhhh password: shi email: jj1j@163.com createdTime: 2017-12-18 22:18:55
+Info:2017/12/18 23:06:04 update.go:27: Update Success!
+Info:2017/12/18 23:06:04 update.go:28: Update information is
+uid: 5
+username: hhhh
+password: shi
+email: jjjj@163.com
+createdTime: 2017-12-18 23:06:04
+Info:2017/12/18 23:06:26 delete.go:37: Delete Success!

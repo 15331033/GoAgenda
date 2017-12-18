@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/caijh23/GoAgenda/http-api/service"
+	"GoAgenda/http-api/service"
 	flag "github.com/spf13/pflag"
 )
 

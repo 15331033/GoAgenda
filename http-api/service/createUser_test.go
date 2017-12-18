@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"github.com/unrolled/render"
 	"testing"
-	"github.com/caijh23/GoAgenda/http-api/entities"
+	"GoAgenda/http-api/entities"
 )
 // func router(f func(*render.Render) http.HandlerFunc,formatter *render.Render,url string) *mux.Router {
 //     router := mux.NewRouter()
