@@ -15,34 +15,32 @@
 package cmd
 
 import (
-	"GoAgenda/http-api/cli/operation"
-	"GoAgenda/http-api/cli/entity"
+	"GoAgenda/cli/operation"
+	"GoAgenda/cli/entity"
 	"github.com/spf13/cobra"
-	"strconv"
 )
 
 // registerCmd represents the register command
-var queryCmd = &cobra.Command{
-	Use:   "query",
-	Short: "To query all account",
-	Long:  `To query all account and show the username, email and phone,the following parameters should be avaliable,k/key is your key`,
+var deleteCmd = &cobra.Command{
+	Use:   "delete",
+	Short: "To delete one account",
+	Long:  `To delete one account,the following parameters should be avaliable,i/UID is the id you want to delete`,
 	Run: func(cmd *cobra.Command, args []string) {
 		//s := entity.GetStorage()
 		//userList := s.QueryUser(getAll)
-		key, err := cmd.Flags().GetString("key")
+		id, err := cmd.Flags().GetString("UID")
 
 		outPutErr([]error{err})
 
-		userList := operation.ListAllUser(key)
-		for _, v := range userList {
-			entity.Info.Println("uid: " + strconv.Itoa(v.UID) + " username: " + v.UserName + " password: " + v.Password + " email: " + v.Email + " createdTime: " + v.Created.Format("2006-01-02 15:04:05"))
-		}
+		operation.DeleteUser(id)
+
+		entity.Info.Println("Delete Success!")
 	},
 }
 
 func init() {
-	RootCmd.AddCommand(queryCmd)
-	queryCmd.Flags().StringP("key", "k", "", "the key,it should not be empty")
+	RootCmd.AddCommand(deleteCmd)
+	deleteCmd.Flags().StringP("UID", "i", "", "the id,it should not be empty")
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command

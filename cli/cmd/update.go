@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"GoAgenda/http-api/cli/operation"
-	"GoAgenda/http-api/cli/entity"
+	"GoAgenda/cli/operation"
+	"GoAgenda/cli/entity"
 	"github.com/spf13/cobra"
 	"strconv"
 )

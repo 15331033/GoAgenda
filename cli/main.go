@@ -14,7 +14,7 @@
 
 package main
 
-import "GoAgenda/http-api/cli/cmd"
+import "GoAgenda/cli/cmd"
 
 func main() {
 	cmd.Execute()
