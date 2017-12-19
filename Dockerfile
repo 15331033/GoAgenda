@@ -1,16 +1,10 @@
 FROM golang:1.8
 
-COPY . $GOPATH/src/github.com/caijh23/GoAgenda
-WORKDIR $GOPATH/src/github.com/caijh23/GoAgenda/cli
-
-RUN go-wrapper download
-RUN go build -o $GOPATH/bin/agendalocal .
-
-WORKDIR $GOPATH/src/github.com/caijh23/GoAgenda/http-api
-
-RUN go-wrapper download
-RUN go build -o $GOPATH/bin/agendaserver .
-
-CMD ["agendaserver"]
+RUN mkdir /data
+COPY . "$GOPATH/src/github.com/caijh23/GoAgenda/"
+RUN cd "$GOPATH/src/github.com/caijh23/GoAgenda/http-api" && go get -v && go install -v
+RUN cd "$GOPATH/src/github.com/caijh23/GoAgenda/cli" && go get -v && go install -v
 
 EXPOSE 8080
+
+VOLUME /data
