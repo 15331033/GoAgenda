@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"testing"
 	"github.com/unrolled/render"
-	"GoAgenda/http-api/entities"
+	"github.com/caijh23/GoAgenda/http-api/entities"
 )
 
 func TestUpdateUser(t *testing.T) {

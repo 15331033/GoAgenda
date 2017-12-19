@@ -5,7 +5,7 @@ import (
     "net/http"
     //"strconv"
 
-    "GoAgenda/http-api/entities"
+    "github.com/caijh23/GoAgenda/http-api/entities"
 
     "github.com/unrolled/render"
 )

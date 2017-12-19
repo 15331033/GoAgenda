@@ -10,7 +10,7 @@ import (
 	"net/http"
 	"github.com/unrolled/render"
 	"strings"
-	"GoAgenda/http-api/entities"
+	"github.com/caijh23/GoAgenda/http-api/entities"
 )
 
 func getKeyHandler(formatter *render.Render) http.HandlerFunc {
