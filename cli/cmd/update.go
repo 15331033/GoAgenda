@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"GoAgenda/cli/operation"
-	"GoAgenda/cli/entity"
+	"github.com/caijh23/GoAgenda/cli/operation"
+	"github.com/caijh23/GoAgenda/cli/entity"
 	"github.com/spf13/cobra"
 	"strconv"
 )
