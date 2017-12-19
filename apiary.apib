@@ -1,0 +1,218 @@
+FORMAT: 1A
+HOST: http://agenda12.apiblueprint.org/
+
+# Agenda
+
+Agenda is a simple API allowing consumers to schedule meeting on-line
+
+# Group User
+
+Resource operations related to a user in the API.
+
+## User-Key [/v1/user/getkey{?username,password}]
+
++ Parameters
+    - username : `root` (string, required) - User Name
+    - password : `pass` (required)
+
+### Get User Key [GET]
+
+get a security key for operations later
+
++ Response 200 (application/json)
+
+        {
+            "key":"1e3576bt",
+            "permissions":["user","admin"]
+        }
+
+
+# Group Users
+
+Resources related to a users in the API.
+
+## Users Collection [/v1/users{?key}]
+
++ Parameters
+    - key : `1e3576bt` (string, required)
+
+### List all Users [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id":1,
+                "username":"zhang3",
+                "password":"zhang",
+                "email":"zhang3@mail2.sysu.edu.cn"
+            },{
+                "id":2,
+                "username":"li4",
+                "password":"li",
+                "email":"li4@mail2.sysu.edu.cn"
+            }
+        ]
+
+### Create a New User [POST]
+
++ Request (application/json)
+
+        {
+            "username":"zhang3"
+            "password":"zhang"
+            "email":"zhang3@mail2.sysu.edu.cn"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /users/1
+
+    + Body
+
+            {
+                "id": 1
+                "username":"zhang3"
+                "password":"zhang"
+                "email":"zhang3@mail2.sysu.edu.cn"
+            }
+
+### Get User by ID [GET /v1/users/{id}]
+
++ Parameters
+    - id : `1` (int, required) - User Name
+
++ Response 200 (application/json)
+
+        {
+            "id" : 1,
+            "username":"zhang3",
+            "password":"zhang",
+            "email":"zhang3@mail2.sysu.edu.cn"
+        }
+
+### Delete User by ID [DELETE /v1/users/{id}]
+
++ Parameters
+    - id : `1` (int, required) - User Name
+
++ Response 200 (application/json)
+
+        {
+            
+        }
+        
+### Update User by ID [PUT /v1/users/{id}]
++ Parameters
+    - id : `1` (int, required) - User Name
+
++ Request (application/json)
+
+        {
+            "username":"zhang3"
+            "password":"zhang"
+            "email":"zhang3@mail2.sysu.edu.cn"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id" : 1,
+            "username":"zhang3",
+            "password":"zhang",
+            "email":"zhang3@mail2.sysu.edu.cn"
+        }
+
+# Group Meetings
+Resources related to a meeting in the API.
+
+## Users Collection [/v1/meetings{?key}]
+
++ Parameters
+    - key : `1e3576bt` (string, required)
+
+### List all Meetings [GET]
+
++ Response 200 (application/json)
+
+        {
+            "title":"go",
+            "participator":["chenwb","caijh"],
+            "startTime":"2017/12/11",
+            "endTime":"2017/12/13"
+        }
+        
+
+### Create a New Meeting [POST]
+
++ Request (application/json)
+
+        {
+            "title":"go",
+            "participator":["chenwb","caijh"],
+            "startTime":"2017/12/11",
+            "endTime":"2017/12/13"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /meetings/go
+
+    + Body
+
+            {
+                "title":"go",
+                "participator":["chenwb","caijh"],
+                "startTime":"2017/12/11",
+                "endTime":"2017/12/13"
+            }
+            
+### Get Meeting by Title [GET /v1/meetings/{title}]
+
++ Parameters
+    - title : `go` (string, required) - Title
+
++ Response 200 (application/json)
+
+        {
+            "title":"go",
+            "participator":["chenwb","caijh"],
+            "startTime":"2017/12/11",
+            "endTime":"2017/12/13"
+        }
+        
+### Delete Meeting by Title [DELETE /v1/meetings/{title}]
+
++ Parameters
+    - title : `go` (string, required) - Title
+
++ Response 200 (application/json)
+
+        {
+            
+        }
+        
+### Update Meeting by Title [PUT /v1/meetings/{title}]
++ Parameters
+    - title : `go` (string, required) - Title
+
++ Request (application/json)
+
+        {
+            "participator":["chenwb","caijh"],
+            "startTime":"2017/12/11",
+            "endTime":"2017/12/13"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "title":"go",
+            "participator":["chenwb","caijh"],
+            "startTime":"2017/12/11",
+            "endTime":"2017/12/13"
+        }

@@ -2,7 +2,7 @@ package test
 
 import (
 	"testing"
-	"GoAgenda/http-api/cli/entity"
+	"github.com/caijh23/GoAgenda/cli/entity"
 )
 
 func TestIsParticipator(t *testing.T) {
