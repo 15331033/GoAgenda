@@ -1,5 +1,9 @@
 package entities
 
+import (
+	"fmt"
+)
+
 //UserInfoAtomicService .
 type UserInfoAtomicService struct{}
 
@@ -49,9 +53,11 @@ func (*UserInfoAtomicService) DeleteUser(id int) error {
 
 	_, err = session.Exec("delete from UserInfo where id = ?", id)
 	if err != nil {
+		fmt.Println("111111")
 		session.Rollback()
 		return err
 	} else {
+		fmt.Println("222222")
 		err = session.Commit()
 		return err
 	}

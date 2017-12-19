@@ -74,6 +74,7 @@ func deleteUserHandler(formatter *render.Render) http.HandlerFunc {
 		vars := mux.Vars(req)
 		id := vars["id"]
 		intId, _ := strconv.Atoi(id)
+		fmt.Println(intId)
 		err := entities.UserInfoService.DeleteUser(intId)
 		if err != nil {
 			http.Error(w, "404 not found", 404)

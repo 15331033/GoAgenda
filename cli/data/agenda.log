@@ -70,3 +70,12 @@ password: shi
 email: jjjj@163.com
 createdTime: 2017-12-18 23:06:04
 Info:2017/12/18 23:06:26 delete.go:37: Delete Success!
+Info:2017/12/18 23:25:09 delete.go:37: Delete Success!
+Info:2017/12/18 23:25:57 delete.go:37: Delete Success!
+Info:2017/12/18 23:27:02 delete.go:37: Delete Success!
+Info:2017/12/18 23:27:22 query.go:38: uid: 1 username: test password: test email: test@123.com createdTime: 2017-12-17 22:44:17
+Info:2017/12/18 23:27:22 query.go:38: uid: 2 username: test1 password: test1 email: test1@123.com createdTime: 2017-12-17 22:44:35
+Info:2017/12/18 23:27:22 query.go:38: uid: 3 username: chen password: 123 email: 123@qq.com createdTime: 2017-12-18 22:07:24
+Info:2017/12/18 23:27:22 query.go:38: uid: 5 username: hhhh password: shi email: jjjj@163.com createdTime: 2017-12-18 22:18:55
+Info:2017/12/18 23:28:01 delete.go:37: Delete Success!
+Info:2017/12/18 23:28:13 delete.go:37: Delete Success!
