@@ -2,6 +2,9 @@
 [![Build Status](https://travis-ci.org/caijh23/GoAgenda.svg?branch=master)](https://travis-ci.org/caijh23/GoAgenda) </br>
 微服务agenda
 
+## 目录说明
+http-api即为课程要求的service目录
+
 ## 使用说明
 - 安装
 ```
